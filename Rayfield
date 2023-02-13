@@ -2317,7 +2317,7 @@ Topbar.Hide.MouseButton1Click:Connect(function()
 		Unhide()
 	else
 		Hidden = true
-		Hide()
+		getgenv().Rayfield_UnhideFunction
 	end
 end)
 
@@ -2329,7 +2329,7 @@ UserInputService.InputBegan:Connect(function(input, processed)
 			Unhide()
 		else
 			Hidden = true
-			Hide()
+			getgenv().Rayfield_UnhideFunction
 		end
 	end
 end)
