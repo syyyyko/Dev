@@ -626,7 +626,6 @@ function RayfieldLibrary:Notify(NotificationSettings)
 			neon:UnbindFrame(Notification.BlurModule)
 			blurlight:Destroy()
 		end
-		wait(0.9)
 		Notification:Destroy()
 	end)
 end
