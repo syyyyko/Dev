@@ -145,7 +145,7 @@ end
 
 local Camera = workspace.CurrentCamera
 local Main = Rayfield.Main
-getgenv().Rayfield_MainScreen = Main
+getgenv().Rayfield_MainScreen = Rayfield.Main
 local Topbar = Main.Topbar
 local Elements = Main.Elements
 local LoadingFrame = Main.LoadingFrame
