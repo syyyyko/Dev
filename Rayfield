@@ -16,8 +16,6 @@ local RayfieldFolder = "Rayfield"
 local ConfigurationFolder = RayfieldFolder.."/Configurations"
 local ConfigurationExtension = ".rfld"
 
-
-
 local RayfieldLibrary = {
 	Flags = {},
 	Theme = {
@@ -116,7 +114,6 @@ local CoreGui = game:GetService("CoreGui")
 -- Interface Management
 local Rayfield = game:GetObjects("rbxassetid://10804731440")[1]
 
-
 if gethui then
 	Rayfield.Parent = gethui()
 elseif syn.protect_gui then 
@@ -148,7 +145,6 @@ end
 
 local Camera = workspace.CurrentCamera
 local Main = Rayfield.Main
-getgenv().Rayfield_MainScreen = Main
 local Topbar = Main.Topbar
 local Elements = Main.Elements
 local LoadingFrame = Main.LoadingFrame
@@ -2314,10 +2310,10 @@ Topbar.Hide.MouseButton1Click:Connect(function()
 	if Hidden then
 		Hidden = false
 		Minimised = false
-		Unhide()
+		getgenv().Rayfield_UnhideFunction()
 	else
 		Hidden = true
-		getgenv().Rayfield_UnhideFunction
+        getgenv().Rayfield_HideFunction()
 	end
 end)
 
@@ -2329,7 +2325,7 @@ UserInputService.InputBegan:Connect(function(input, processed)
 			Unhide()
 		else
 			Hidden = true
-			getgenv().Rayfield_UnhideFunction
+			Hide()
 		end
 	end
 end)
